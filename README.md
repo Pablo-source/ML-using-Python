@@ -1,6 +1,6 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![GitHub all releases](https://img.shields.io/github/downloads/Pablo-source/Targets_pipelines_howto/total?label=Downloads&style=flat-square)
-![GitHub language count](https://img.shields.io/github/languages/count/Pablo-source/Targets_pipelines_howto)
+![GitHub all releases](https://img.shields.io/github/downloads/Pablo-source/ML-using-Python/total?label=Downloads&style=flat-square)
+![GitHub language count](https://img.shields.io/github/languages/count/Pablo-source/ML-using-Python)
 
 # ML-using-Python
 Machine Learning models using Python
