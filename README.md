@@ -10,8 +10,9 @@ This project will contain all Python scrips I create to improve my python skills
 
 This first folder includes function created specifically to improve daily coding, they will be populated with more function in coming weeks:
 - Function to setup a new project folder structure with folders such as "data", "model", "output", "test" 
+    * Script 01: **"00 Setup project folder structure.py"**
 - Function to clean and save away your **downloads** folder, automate in a single function the classification and archiving of different file extensions "01 xlsx_files", "02 pdf_files", "03 shp_files", "04 csv_files", "05 ipynb_files", "06 Markdown_files" and "07 xls_files" for now.
-
+		* Script 02: **"01 Clean downloads folder.py"**
 
 # ML-using-Python
 Machine Learning models using Python
