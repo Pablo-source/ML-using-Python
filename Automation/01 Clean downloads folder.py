@@ -1,5 +1,5 @@
 
-# AIM: Create several functions to clean up Downloads folder, storing each file type on its own folder.
+# AIM: Create a function to clean up Downloads folder, storing each file type on its own folder.
 # Run it on a daily or weekly basis, to keep Download folder neat and tidy
 # Pablo Leon-Rodenas
 
@@ -18,7 +18,7 @@ os.chdir(download)
 wd = os.getcwd()
 print(wd)
 
-# Function 01/02 project_setup builds required folders to store files in Downloads folder
+# Section 01/02 project_setup builds required folders to store files in Downloads folder
 
 # New function (improves performance)
 # Combine folder creation and file moving into a single function.
@@ -44,6 +44,7 @@ def clean_downloadsfolder():
         os.mkdir("08 deb_files")
     print("Created project folder structure")
 
+#  Section 02/02
 #  Second section of this function Lists each of the file extensions in downloads folder
 #  and moves it to its corresponding file extension folder
 
