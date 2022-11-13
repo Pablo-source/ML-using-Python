@@ -10,7 +10,7 @@ os.mkdir("Project01")
 New_dir = os.chdir('C:/Users/Pablo.Leonrodenas/Python_LEARNING/Project01')
 
 # Import required libraries
-import os.path
+import os
 from os import path
 
 # We can create several folders (data,Output,Shapefiles,model) within our Python project
