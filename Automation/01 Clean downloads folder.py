@@ -18,15 +18,14 @@ os.chdir(download)
 wd = os.getcwd()
 print(wd)
 
+# Function 01/02 project_setup builds required folders to store files in Downloads folder
+
 # New function (improves performance)
-# It Combines 
-# a) folder creation and 
-# b) moving each existing file in Downloads folder to its corresonding folder based on its extension
-
-# This new function is called: clean_downlodsfolder()
+# Combine folder creation and file moving into a single function.
+# This new function is called: clean_downloadsfolder()
 
 
-def clean_downlodsfolder():
+def clean_downloadsfolder():
     if not path.exists("01 xlsx_files"):
         os.mkdir("01 xlsx_files")
     if not path.exists("02 pdf_files"):
@@ -36,7 +35,7 @@ def clean_downlodsfolder():
     if not path.exists("04 csv_files"):
         os.mkdir("04 csv_files")
     if not path.exists("05 ipynb_files"):
-        os.mkdir("05 ipynb_files")
+            os.mkdir("05 ipynb_files")
     if not path.exists("06 Markdown_files"):
         os.mkdir("06 Markdown_files")
     if not path.exists("07 xls_files"):
@@ -87,7 +86,7 @@ def clean_downlodsfolder():
         shutil.move(original, target)
         print(f"file{item},has been moved to 03 shp_files folder")
 
-# 04/06 CSV Files
+    # 04/06 CSV Files
     csv_files = glob.glob('/home/pablo/Downloads/*.csv')
     print(csv_files)
     print(len(csv_files))
@@ -139,7 +138,7 @@ def clean_downlodsfolder():
         shutil.move(original, target)
         print(f"file{item}, has been moved to 07 xls_files")
 
- # 08 Deb files
+# 08 Deb files
     deb_files = glob.glob('/home/pablo/Downloads/*.deb')
     print(deb_files)
     print(len(deb_files))
@@ -153,6 +152,5 @@ def clean_downlodsfolder():
         print(f"file{item}, has been moved to 08 deb_files")
 
 
-clean_downlodsfolder()
-
+clean_downloadsfolder()
 
