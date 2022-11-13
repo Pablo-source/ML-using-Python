@@ -36,7 +36,7 @@ def clean_downlodsfolder():
     if not path.exists("04 csv_files"):
         os.mkdir("04 csv_files")
     if not path.exists("05 ipynb_files"):
-            os.mkdir("05 ipynb_files")
+        os.mkdir("05 ipynb_files")
     if not path.exists("06 Markdown_files"):
         os.mkdir("06 Markdown_files")
     if not path.exists("07 xls_files"):
@@ -87,7 +87,7 @@ def clean_downlodsfolder():
         shutil.move(original, target)
         print(f"file{item},has been moved to 03 shp_files folder")
 
-    # 04/06 CSV Files
+# 04/06 CSV Files
     csv_files = glob.glob('/home/pablo/Downloads/*.csv')
     print(csv_files)
     print(len(csv_files))
@@ -139,7 +139,7 @@ def clean_downlodsfolder():
         shutil.move(original, target)
         print(f"file{item}, has been moved to 07 xls_files")
 
-    # 08 Deb files
+ # 08 Deb files
     deb_files = glob.glob('/home/pablo/Downloads/*.deb')
     print(deb_files)
     print(len(deb_files))
