@@ -26,6 +26,7 @@ print(wd)
 
 
 def clean_downloadsfolder():
+# Create new directories in your Downloads folder to save each individual file extension 
     if not path.exists("01 xlsx_files"):
         os.mkdir("01 xlsx_files")
     if not path.exists("02 pdf_files"):
