@@ -1,5 +1,4 @@
 import os
-import shutil
 
 if __name__ == '__main__': ##i don't undestand https://stackoverflow.com/questions/419163/what-does-if-name-main-do
     _dir = r'C:\Users\mesut.uzunov\OneDrive - NHS England\Training\Test Python 3 folder'
