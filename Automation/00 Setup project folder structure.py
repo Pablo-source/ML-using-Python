@@ -1,19 +1,19 @@
-# ## 1. Function to create project folder structure
-
-wd = os.getcwd()
-wd
-
-Curr_dir = os.chdir('C:/Users/Pablo.Leonrodenas/Python_LEARNING')
-
-os.mkdir("Project01")
-
-New_dir = os.chdir('C:/Users/Pablo.Leonrodenas/Python_LEARNING/Project01')
-
-# Import required libraries
+# import required libraries
 import os
 from os import path
 
-# We can create several folders (data,Output,Shapefiles,model) within our Python project
+wd = os.getcwd()
+print(wd)
+
+# Change current directory to Downloads folder
+Downloads = '/home/pablo/Downloads'
+
+Curr_dir = os.chdir(Downloads)
+
+wd = os.getcwd()
+print(wd)
+
+# Create several folders to file and store away different file types
 
 def project_setup():
     if not path.exists("data"):
@@ -27,8 +27,6 @@ def project_setup():
     
     print("Created project folder structure")
 
+# Execute project_setup() function
 project_setup()
-
-
-
 
