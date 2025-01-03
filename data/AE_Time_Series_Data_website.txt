@@ -1,1 +1,5 @@
 This is publically available AE Attendanes and admissions data downloaded from NHS England website
+<https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/>
+- Monthly A&E Time Series November 2024 (xls, 416KB)
+- Downloaded data from:
+https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2024/12/Monthly-AE-Time-Series-November-2024-XLS-416KB-1.xls
