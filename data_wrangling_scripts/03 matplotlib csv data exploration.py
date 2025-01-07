@@ -18,8 +18,8 @@ print(data_folder)
 # Now, let's set the Date column as a dataframe index using the set_index method:
 
 # 2.1.2 Then use parse_dates to display date format correctly YYYY-MM-DD
-milk_production  = '/home/pablo/Documents/Pablo_zorin/VS_Python_TUTORIALS/data/monthly-milk-production-pounds.csv'
-df = pd.read_csv('/home/pablo/Documents/Pablo_zorin/VS_Python_TUTORIALS/data/monthly-milk-production-pounds.csv'
+milk_production  = r'/home/pablo/Documents/Pablo_zorin/VS_Python_TUTORIALS/data/monthly-milk-production-pounds.csv'
+df = pd.read_csv(r'/home/pablo/Documents/Pablo_zorin/VS_Python_TUTORIALS/data/monthly-milk-production-pounds.csv'
                  , index_col = 'Date', parse_dates= True)
 
 df.head()
