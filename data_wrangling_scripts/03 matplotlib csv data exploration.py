@@ -10,8 +10,10 @@ wd = os.getcwd()
 print(wd)
 
 # CSV.file: monthly-milk-
-data_folder = os.listdir(r'/home/pablo/Documents/Pablo_zorin/VS_Python_TUTORIALS/data/monthly-milk-production-pounds.csv')
+data_folder = r'/home/pablo/Documents/Pablo_zorin/Github_Pablo_source_zorin/ML-using-Python/data'
 print(data_folder)
+
+os.listdir(data_folder)
 
 # 2.1 Format date column 
 # 2.1.1 Define Date column as Index in your dataframe

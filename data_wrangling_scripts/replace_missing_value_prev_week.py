@@ -7,5 +7,3 @@ for row in range(0, len(df3)):
 
         df3['Sales'].shift(7), df3['Sales']
     )
-
-# In[16]:
