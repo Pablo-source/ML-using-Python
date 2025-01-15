@@ -132,7 +132,7 @@ AE_data_raw.info()
 AE_data_raw.head()
 
 # We can see how the plot does not have formatted dates
-plt.title("Attendances TypeI in time")
+plt.title("TypeI Attendances in England.2010-2024 Period")
 plt.plot(AE_data_raw.Period,
 AE_data_raw.Type1_ATT)
 plt.xlabel("Time")
@@ -150,10 +150,29 @@ AE_data = pd.read_csv(AE_Attendances_file,
 AE_data.head()
 
 # As you can see, now the date is correctly formatted to be plotted in a chart
-plt.title("England TypeI Attendances. 2010-2024 period")
+plt.title("Attendances TypeI in England. 2010-2024 period")
 plt.plot(AE_data.Period,
 AE_data.Type1_ATT)
 plt.xlabel("Time")
 plt.ylabel("Attendances")
 plt.savefig('Type I attendances 2010-2013 period.png', bbox_inches='tight') ## This saves the output
+plt.show()
+
+# Type1 and Type2 line chart Attendances in England. 2010 2014 period.
+plt.title("Attendances TypeI in England.2010-2024 Period")
+plt.plot(AE_data.Period,AE_data.Type1_ATT)
+plt.plot(AE_data.Period,AE_data.Type2_ATT)
+plt.xlabel("Time")
+plt.ylabel("Attendances")
+plt.savefig('Type I and II attendances 2010 2024 period.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
+plt.show()
+
+# Type1, Type2 and Type3 Attendances  line chart Attendances in England. 2010 2014 period.
+plt.title("Total attendances by Type (I,II,III) in England.2010-2024 Period")
+plt.plot(AE_data.Period,AE_data.Type1_ATT)
+plt.plot(AE_data.Period,AE_data.Type2_ATT)
+plt.plot(AE_data.Period,AE_data.Type3_ATT)
+plt.xlabel("Time")
+plt.ylabel("Attendances")
+plt.savefig('Type I, II and IIII attendances 2010 2024 period.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
 plt.show()
