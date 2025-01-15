@@ -176,3 +176,17 @@ plt.xlabel("Time")
 plt.ylabel("Attendances")
 plt.savefig('Type I, II and IIII attendances 2010 2024 period.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
 plt.show()
+
+### 6. Include legends in matplotlib plots
+## Include legend to each plt.plot() function label Type I Attendances
+# plt.legend(loc='best')
+# plt.legend(loc="upper left")
+plt.title("Total attendances by Type (I,II,III) in England.2010-2024 Period")
+plt.plot(AE_data.Period,AE_data.Type1_ATT, label = "Type I Attendences")
+plt.plot(AE_data.Period,AE_data.Type2_ATT, label = "Type II Attendences")
+plt.plot(AE_data.Period,AE_data.Type3_ATT, label = "Type III Attendences")
+plt.xlabel("Time")
+plt.ylabel("Attendances")
+plt.legend(loc="lower left")
+plt.savefig('Type I, II and IIII attendances 2010 2024 period.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
+plt.show()
