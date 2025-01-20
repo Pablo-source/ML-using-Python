@@ -1,0 +1,2 @@
+- This folder includes Quarto reports I have created in Python
+- Rendered using Quarto extension from VScode 
