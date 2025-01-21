@@ -1,0 +1,2 @@
+- This folder contains .csv files used to populate Quarto files
+- From NHS website I have downloaded AE Attendances TypeI, TypeII and TypeIII data for the 2010-2024 period as a .csv file imported into Python using Pandas 
