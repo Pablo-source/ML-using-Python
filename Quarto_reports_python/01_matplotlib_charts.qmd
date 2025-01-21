@@ -1,0 +1,91 @@
+---
+title: "Quarto matplotlib charts"
+title-block-banner: true
+title-block-banner-color: azure
+author: "Pablo Leon"
+date: "`r Sys.Date()`"
+format:
+  html:
+    toc: true
+    toc-location: left
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+## Creating plots in Quarto
+
+This is an example on how to create Matplotlib Python charts using Quarto. First you have to install the Quarto extension in VS code in order to render final documents.
+
+```{python}
+import pandas as pd
+import numpy as np
+import os
+```
+
+Then can inport data from our .csv file
+
+```{python}
+wd = os.getcwd()
+print(wd)
+
+data_folder = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data'
+print(data_folder)
+
+AE_Attendances_file = r'c:\Users\OGTSLCEF\OneDrive - NHS\Documents\Python Scripts\data\AE_Attendances_2010_2024.csv'
+
+AE_data = pd.read_csv(AE_Attendances_file,
+parse_dates=[0],
+                      date_format = '%d/%m/%Y')  
+
+AE_data.head()
+```
+
+Then we can create a new Chart
+
+```{python}
+AE_data.columns = ['Date','Att_type1','Att_type2','Att_type3']
+AE_data.columns
+AE_data.head()
+```
+
+```{python}
+AE_data.info()
+type(AE_data)
+```
+
+## 1. Line matplotlib chart
+
+For a demonstration of a simple list written in Python, see @fig-codechunck. In Quarto we use code blocks to write code. We use braces 
+
+```{python}
+#| label: fig-codechunck
+#| fig-cap: "An example of a list"
+
+x = [1,2,4]
+print(x)
+
+```
+
+To create our first Line chart we need first to import matplotlib library
+
+```{python}
+import matplotlib.pyplot as plt
+```
+
+### 1.1 Type I Attendances
+
+This first plot displays total number of AE Type 1 Attendances in England for the 2010-2024 period.
+
+```{python}
+plt.title("Attendances by Type (I,II,III) in England.2010-2024 Period")
+plt.plot(AE_data.Date,AE_data.Att_type1)
+plt.plot(AE_data.Date,AE_data.Att_type2)
+plt.plot(AE_data.Date,AE_data.Att_type3)
+plt.xlabel("Time")
+plt.ylabel("Attendances")
+plt.savefig('Type I, II and IIII attendances 2010 2024 period.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
+plt.show()
+```
+
+```{python }
+```
