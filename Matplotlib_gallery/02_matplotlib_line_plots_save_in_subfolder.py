@@ -22,11 +22,13 @@ parse_dates= [0],
 date_format='%d/%m/%Y')
 AE_data.head()
 
+# 3. Use mkdir() method from OS module to create new folder to store output .png plots
+os.mkdir("Plots")
 
-# 3. Load Matplotlib library 
+# 4. Load Matplotlib library 
 from matplotlib import pyplot as plt
 
-### 3.1 Include legends in matplotlib plots
+### 4.1 Include legends in matplotlib plots
 
 ## Include legend to each plt.plot() function label Type I Attendances
 # plt.legend(loc='best')
@@ -41,7 +43,7 @@ plt.legend(loc="lower left")
 plt.savefig('Type I, II and IIII attendances 2010 2024 period.png', bbox_inches='tight') ## Save plot as .png file
 
 
-# 3.2 Save plot in a new "Plots" sub-folder
+# 4.2 Save plot in a new "Plots" sub-folder
 plt.title("Total attendances by Type (I,II,III) in England.2010-2024 Period")
 plt.plot(AE_data.Period,AE_data.Type1_ATT, label = "Type I Attendences")
 plt.plot(AE_data.Period,AE_data.Type2_ATT, label = "Type II Attendences")
@@ -52,7 +54,7 @@ plt.legend(loc="lower left")
 # Save this new line chart in a Plots sub-folder
 plt.savefig('Plots/Type I, II and IIII attendances 2010 2024 period.png', bbox_inches='tight') ## Save plot as .png file
 
-## 3.3 Create a new plot using numpy to display sin and cos function
+## 4.3 Create a new plot using numpy to display sin and cos function
 # Save it in the Plots sub-folder
 
 import numpy as np
