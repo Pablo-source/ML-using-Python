@@ -1,0 +1,164 @@
+---
+title: "Matplotlib bar charts"
+title-block-banner: true
+title-block-banner-color: azure
+author: "Pablo Leon"
+date: "`r Sys.Date()`"
+format:
+  html:
+    toc: true
+    toc-location: left
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+## Creating plots in Quarto
+
+This is an example on how to create Matplotlib Python bar charts using Quarto to output an interactive HTML file. First you have to install the Quarto extension in VS code in order to render final documents.
+
+```{python}
+import pandas as pd
+import numpy as np
+import os
+```
+
+Then can inport data from our .csv file
+
+```{python}
+wd = os.getcwd()
+print(wd)
+
+data_folder = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data'
+print(data_folder)
+
+AE_Attendances_file = r'c:\Users\OGTSLCEF\OneDrive - NHS\Documents\Python Scripts\data\AE_Attendances_2010_2024.csv'
+
+AE_data = pd.read_csv(AE_Attendances_file,
+parse_dates=[0],
+                      date_format = '%d/%m/%Y')  
+
+AE_data.head()
+```
+
+Then we can create a new Chart
+
+```{python}
+AE_data.columns = ['Date','Att_type1','Att_type2','Att_type3']
+AE_data.columns
+AE_data.head()
+```
+
+```{python}
+AE_data.info()
+type(AE_data)
+```
+
+## 1. Line matplotlib chart
+
+Save this plot into a sub-directory called "Plots". From os module we use .mkdir() method to create new **Plots** folder to save our output as .png files.
+
+```{python }
+# os.mkdir("Plots")
+```
+
+To create our first Line chart we need first to import matplotlib library
+
+```{python}
+import matplotlib.pyplot as plt
+```
+
+### 1.1 Type I Attendances
+
+This first plot displays total number of AE Type 1 Attendances in England for the 2010-2024 period.
+
+```{python}
+plt.title("Attendances by Type (I,II,III) in England.2010-2024 Period")
+plt.plot(AE_data.Date,AE_data.Att_type1)
+plt.plot(AE_data.Date,AE_data.Att_type2)
+plt.plot(AE_data.Date,AE_data.Att_type3)
+plt.xlabel("Time")
+plt.ylabel("Attendances")
+plt.savefig('Plots/Type I, II and IIII attendances 2010 2024 period.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
+plt.show()
+```
+
+## 2. Bar plots in matplotlib 
+
+For this bar plot I will fist subset initial data to keep just TypeI attendances
+
+```{python }
+# Subset data to keep just Type I Attendances 
+AE_data.head()
+```
+
+Subset first two columns
+
+```{python }
+# Subset data to keep just Type I Attendances 
+AE_TypeI = AE_data[['Date','Att_type1']]
+AE_TypeI.head()
+```
+
+Then we can plot just this Att_type1 data and time as a bar chart.
+But first I will try just to subset 5 first rows to test a small bar chart before plotting the entire time series.
+
+
+### 2.1 Subset data for specific dates
+
+Currently my previous dataset has not got defined any index. So in order to filter the data using .iloc position indexing, I would like to set Date as the index. 
+
+```{python }
+AE_TypeI.set_index("Date",inplace=True)
+AE_TypeI.head()
+```
+
+Now that my Date column is defined as an index,  I can use .loc for label based indexing or .iloc for positional indexing.
+
+```{python }
+
+AE_TypeI_AUG_OCT_2010 = AE_TypeI.loc['2010-08-01':'2010-10-01']
+AE_TypeI_AUG_OCT_2010
+```
+
+
+### 2.2 Create bar chart for subset data
+
+To plot previous data, I need first to reset the index for Date column I created earlier in order to filter by specific date values. I used .loc() method combined with set_index() to filter data for Aug-Oct 2010 period from my initial dataset.
+
+```{python }
+AE_TypeI_AUG_OCT_2010.head()
+```
+
+So I reset index using *reset_index()* method. 
+
+```{python }
+AE_TypeI_AUG_OCT_2010.head()
+AE_TypeI_AUG_OCT_2010_plot = AE_TypeI_AUG_OCT_2010.reset_index()
+
+```
+The data is ready to be used in matplotlib
+
+```{python }
+AE_TypeI_AUG_OCT_2010_plot
+
+```
+Nowe we have just three months worth of daat in the above dataset, so I can create a small bar plot using matplotlib.
+Also I can save this bar plot in the Plots sub-folder I created earlier
+
+```{python }
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+
+ax.bar(AE_TypeI_AUG_OCT_2010_plot.Date,
+AE_TypeI_AUG_OCT_2010_plot.Att_type1)
+
+ax.set_ylabel('Count of TypeI Attendances')
+ax.set_title('Type I Attendances in England. Aug-Oct 2010')
+ax.set_ylabel('Count of TypeI Attendances')
+# Save chart in Plots sub-folder
+plt.savefig('Plots/Type I, II and IIII attendances 2010 2024 period_bar_plot.png', bbox_inches='tight') ## This 
+plt.show()
+
+```
+
