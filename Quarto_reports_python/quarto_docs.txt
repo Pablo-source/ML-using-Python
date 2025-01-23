@@ -1,2 +1,5 @@
 - This folder includes Quarto reports I have created in Python
 - Rendered using Quarto extension from VScode 
+- List of Quarto files: 
+01_matplotlib_line_charts.qmd
+02_matplotlib_bar_charts.qmd
