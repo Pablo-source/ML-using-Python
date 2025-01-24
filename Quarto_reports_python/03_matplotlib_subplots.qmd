@@ -1,0 +1,120 @@
+---
+title: "Matplotlib subplots"
+title-block-banner: true
+title-block-banner-color: azure
+author: "Pablo Leon"
+date: "`r Sys.Date()`"
+format:
+  html:
+    toc: true
+    toc-location: left
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+## Creating multiples subplots
+
+This notebook will focus on how to use the subplots() **method** from matplotlib **module**. Reference:<https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html>
+
+### 1. Subplots mehod creates a grid of plots
+
+The main feture of subplots() **method** is that it allows us to create multiple subplots arranged in a **grid**. Providing reasonable control over how the individual plots are created. 
+
+### 2. A figure with just one subplot
+
+We can also use **subplots()* function to create one single plot. When we use subplots() function without arguments, it returns a Figure and a single axis
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0,2 * np.pi, 400)
+y = np.sin(x ** 2)
+```
+
+We have just created to series we can plot in a chart using pyplot and this instance it will contain just **one** subplot. 
+
+We have to define when using **subplot()** these elements:
+
+- fig: It can be defined on the same line as the .subplots() function
+- ax: Convention dictates that plt.subplots() is assigned to an object called ax
+
+The main advantage of using subplots() function is that is allows to introduce other plot elements such as: 
+
+- Title: using set_tile() function
+
+```{python}
+fig, ax = plt.subplots()
+ax.plot(x,y)
+ax.set_title('A single plot')
+```
+
+```{python}
+```
+
+### 3. Stacking subplots in one direction 
+
+In this section we start introducing new arguments to the plt.subplots() function: We can introduce the number of **rows** and **cols** of the **subplot grid**
+
+- When stacking charts in **one direction**, the returned axis is a 1D numpy array containing a list of created axes.
+- When providing one number, we define only the rows.Charts are stacked by 1 column and n rows, in this instance 2 rows. 
+
+```{python}
+fig, axs = plt.subplots(2)
+fig.suptitle('Vertically stacked subplots')
+axs[0].plot(x, y)
+axs[1].plot(x, -y)
+```
+
+Reference:<https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html>
+
+We can apply the same principle to our A&E Attendances data
+
+
+
+```{python}
+import pandas as pd
+import os
+
+wd = os.getcwd()
+print(wd)
+
+data_folder = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data'
+print(data_folder)
+
+AE_Attendances_file = r'c:\Users\OGTSLCEF\OneDrive - NHS\Documents\Python Scripts\data\AE_Attendances_2010_2024.csv'
+
+AE_data = pd.read_csv(AE_Attendances_file,
+parse_dates=[0],
+                      date_format = '%d/%m/%Y')  
+
+AE_data.head()
+```
+
+```{python}
+AE_data.columns = ['Date','Att_type1','Att_type2','Att_type3']
+AE_data.columns
+AE_data.head()
+```
+
+```{python}
+plt.title("Attendances by Type (I,II,III) in England.2010-2024 Period")
+plt.plot(AE_data.Date,AE_data.Att_type1)
+plt.plot(AE_data.Date,AE_data.Att_type2)
+plt.plot(AE_data.Date,AE_data.Att_type3)
+plt.xlabel("Time")
+plt.ylabel("Attendances")
+plt.savefig('Plots/Type I, II and IIII attendances 2010 2024 period_line_plot.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
+plt.show()
+```
+
+Then we can turn the above plot into a set of three subplots
+
+```{python}
+fig, axs = plt.subplots(3)
+fig.suptitle('TypeI, Type2, Type3 Attendances plot as Subplots')
+axs[0].plot(AE_data.Date,AE_data.Att_type1)
+axs[1].plot(AE_data.Date,AE_data.Att_type2)
+axs[2].plot(AE_data.Date,AE_data.Att_type3)
+plt.savefig('Plots/Type I, II and IIII attendances 2010 2024. Subplots.png', bbox_inches='tight')
+```
