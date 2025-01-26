@@ -31,7 +31,7 @@ print(wd)
 data_folder = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data'
 print(data_folder)
 
-AE_Attendances_file = r'c:\Users\OGTSLCEF\OneDrive - NHS\Documents\Python Scripts\data\AE_Attendances_2010_2024.csv'
+AE_Attendances_file = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data/AE_Attendances_2010_2024.csv'
 
 AE_data = pd.read_csv(AE_Attendances_file,
 parse_dates=[0],
@@ -59,7 +59,11 @@ plt.ylabel("Attendances")
 plt.savefig('Plots/Type I, II and IIII attendances 2010 2024 period_line_plot.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
 plt.show()
 
-# 3.4 Plot chart as Subplots
+# 3.5 Plot chart as Subplots
+
+# In the subplots we introduce these two new lines
+# fig, axs = plt.subplots(3) # We want to include all three Attendances Types on the subplot
+
 fig, axs = plt.subplots(3)
 fig.suptitle('TypeI, Type2, Type3 Attendances plot as Subplots')
 axs[0].plot(AE_data.Date,AE_data.Att_type1)
