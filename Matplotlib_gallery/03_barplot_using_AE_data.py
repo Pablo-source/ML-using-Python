@@ -1,5 +1,5 @@
 
-# Python script: 03_barplot.py
+# Python script: 03_barplot_using_AE_data.py
 
 # 1. Load required modules
 
