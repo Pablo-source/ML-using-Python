@@ -48,7 +48,7 @@ AE_TypeI.head()
 AE_TypeI_AUG_OCT_2010 = AE_TypeI.loc['2010-08-01':'2010-10-01']
 AE_TypeI_AUG_OCT_2010
 
-### 5.3 Create bar chart for subset data
+### 5.3 Create bar chart for subset data 
 # To create the bar chart I need to reset index, as I have setup Date as index
 # to slice my data 
 AE_TypeI_AUG_OCT_2010.head()
@@ -72,6 +72,6 @@ plt.bar(AE_TypeI_AUG_OCT_2010_plot.Date,
 # Rote X axis label 90 degrees
 plt.xticks(rotation=90)
 # Save output plot into Plots sub-folder
-plt.savefig('Plots/Bar_plot_TypeI_Attendances_England_Aug_Oct_2010.png', bbox_inches='tight')
+plt.savefig('Plots/Bar_plot_X_Axis_Label_Rotation_TypeI_Attendances_Aug_Oct_2010.png', bbox_inches='tight')
 plt.show()
 
