@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import os
 
-# 2. Import .csv data into Python
+# 2. Import .csv data into Python.
 wd = os.getcwd()
 print(wd)
 
