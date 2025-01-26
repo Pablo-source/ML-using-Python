@@ -56,17 +56,21 @@ AE_TypeI_AUG_OCT_2010_plot = AE_TypeI_AUG_OCT_2010.reset_index()
 AE_TypeI_AUG_OCT_2010_plot.head()
 
 # Now the data is ready to be used in matplotlib to create a bar plot
+# Include this code below to avoid dates overlapping on the x axis
+# plt.xticks(rotation = 90)
 
 import matplotlib.pyplot as plt
 
-fig, ax = plt.subplots()
-# We create a barplot using .bar() function 
-ax.bar(AE_TypeI_AUG_OCT_2010_plot.Date,
-       AE_TypeI_AUG_OCT_2010_plot.Att_type1)
+# Standard matplotlib bar chart
 
-ax.set_ylabel('Count of TypeI attendances')
-ax.set_xlabel("Date")
-ax.set_title("Type I Attendances in England. Aug-Oct 2010")
-# Saving bar chart in plots sub-folder
+# barplot using .bar() function
+plt.title("Type I AE Attendances in England. 2010-2014 period")
+plt.xlabel("Time")
+plt.ylabel("AE Type I Attendances")
+plt.bar(AE_TypeI_AUG_OCT_2010_plot.Date,
+       AE_TypeI_AUG_OCT_2010_plot.Att_type1)
+# Rote X axis label 90 degrees
+plt.xticks(rotation=90)
 plt.savefig('Plots/Bar_plot_TypeI_Attendances_England_Aug_Oct_2010.png', bbox_inches='tight')
 plt.show()
+# Save output plot
