@@ -19,7 +19,7 @@ AE_Attendances_file = r'/home/pablo/Documents/Pablo_zorin/VS_Python_GitHub_Pablo
 print(AE_Attendances_file)
 
 AE_data = pd.read_csv(AE_Attendances_file,
-pxarse_dates=[0],
+parse_dates=[0],
                       date_format = '%d/%m/%Y')  
 
 AE_data.head()
