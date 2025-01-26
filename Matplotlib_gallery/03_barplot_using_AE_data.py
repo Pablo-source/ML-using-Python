@@ -71,6 +71,7 @@ plt.bar(AE_TypeI_AUG_OCT_2010_plot.Date,
        AE_TypeI_AUG_OCT_2010_plot.Att_type1)
 # Rote X axis label 90 degrees
 plt.xticks(rotation=90)
+# Save output plot into Plots sub-folder
 plt.savefig('Plots/Bar_plot_TypeI_Attendances_England_Aug_Oct_2010.png', bbox_inches='tight')
 plt.show()
-# Save output plot
+
