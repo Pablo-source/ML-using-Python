@@ -42,7 +42,7 @@ AE_data.columns
 # 2. Using os.path.join() function
 # This is a better way to imoprt dat into Python using relative paths in python provided by os.path.join() function
 
-data_folder = os.path.join("/home","pablo","Documents","Pablo_zorin","VS_Python_GitHub_Pablo_source/ML-using-Python","data")
+data_folder = os.path.join("/home","pablo","Documents","Pablo_zorin","VS_Python_GitHub_Pablo_source","ML-using-Python","data")
 print(data_folder) 
 # List files now from path defined by os.path.join() method
 data_folder_files = os.listdir(data_folder)
@@ -50,7 +50,7 @@ print(data_folder_files)
 
 # 2.1 Define again Attendances file to inmport into Python using relative paths
 
-attendances_file = os.path.join("/home","pablo","Documents","Pablo_zorin","VS_Python_GitHub_Pablo_source/ML-using-Python","data","AE_Attendances_2010_2024.csv")
+attendances_file = os.path.join("/home","pablo","Documents","Pablo_zorin","VS_Python_GitHub_Pablo_source","ML-using-Python","data","AE_Attendances_2010_2024.csv")
 print(attendances_file)
 
 # 2.2 Then load this attendances file defined by os.path.join() function
