@@ -33,6 +33,10 @@ print(data_folder)
 
 AE_Attendances_file = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data/AE_Attendances_2010_2024.csv'
 
+# Re-write path to input file using os.path.join() method
+AE_Attendances_file = os.path.join("home","pablo","Documents","Pablo_zorin","VS_Python_topics",
+                                   "data","AE_Attendances_2010_2024.csv")
+
 AE_data = pd.read_csv(AE_Attendances_file,
 parse_dates=[0],
                       date_format = '%d/%m/%Y')  
