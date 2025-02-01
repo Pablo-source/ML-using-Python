@@ -11,7 +11,7 @@ data_folder = r'/home/pablo/Documents/Pablo_zorin/VS_Python_GitHub_Pablo_source/
 print(data_folder)
 
 
-# 1. Previous way of loading data using r'/ and hardcoded paths
+# 1. Previous way of loading data using r'/ and hardcoded paths.
 
 # 1.1 List files on my data folder
 
