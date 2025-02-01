@@ -47,3 +47,19 @@ print(data_folder)
 # List files now from path defined by os.path.join() method
 data_folder_files = os.listdir(data_folder)
 print(data_folder_files)
+
+# 2.1 Define again Attendances file to inmport into Python using relative paths
+
+attendances_file = os.path.join("/home","pablo","Documents","Pablo_zorin","VS_Python_GitHub_Pablo_source/ML-using-Python","data","AE_Attendances_2010_2024.csv")
+print(attendances_file)
+
+# 2.2 Then load this attendances file defined by os.path.join() function
+AE_data_new = pd.read_csv(attendances_file, parse_dates=[0], date_format='%d/%m/%Y')
+AE_data_new.info()
+AE_data_new.head()
+
+# Conclusion: From now on use os.path.join() function to build relative paths when manipulating files and directories
+# Rename columns after importing data from .csv file.
+AE_data_new.columns
+AE_data_new.columns = ['Period','ATT_TypeI','ATT_TypeII','ATT_TypeIII']
+AE_data_new.head()
