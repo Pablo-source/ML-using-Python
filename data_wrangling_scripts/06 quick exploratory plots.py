@@ -29,9 +29,15 @@ print(attendances_file)
 AE_data = pd.read_csv(attendances_file,parse_dates=[0],date_format = '%d/%m/%Y')  
 AE_data.head()
 
-print(attendances_file)
+print(AE_data)
 
+# 4. Quick exploratory data
 
-AE_data_new = pd.read_csv(attendances_file,parse_dates=[0], date_format='%d/%m/%Y')
-AE_data_new.info()
-AE_data_new.head()
+# 4.1 Bar chart for each metric from AE_data Dataset
+AE_data['Type1_ATT'].plot(kind = 'hist', bins = 10)  # Quick histogram Type1_ATT distribution
+AE_data['Type2_ATT'].plot(kind = 'hist', bins = 10)  # Quick histogram Type2_ATT distribution
+AE_data['Type3_ATT'].plot(kind = 'hist', bins = 10)  # Quick histogram Type3_ATT distribution
+
+# 4.2 Scatterplot
+AE_data.plot(x ='Type1_ATT',
+             y ='Type2_ATT',kind = 'scatter')
