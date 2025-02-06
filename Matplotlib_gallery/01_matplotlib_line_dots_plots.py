@@ -11,12 +11,10 @@ import os
 ### 2. Ingest data into Python from \data folder
 wd = os.getcwd()
 print(wd)
-data_folder = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data'
-print(data_folder)
-
-# List files in my /data folder
+#data_folder = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data'
+data_folder = os.path.join("/home","pablo","Documents","Pablo_zorin","VS_Python_GitHub_Pablo_source","ML-using-Python","data")
 data_folder_contents = os.listdir(data_folder)
-print(data_folder_contents)
+print('data folder contents:',data_folder_contents)
 
 # ['wine_quality.zip', 'winequality.names', 'winequality-red.csv', 'Survey_2024', 'stack-overflow-developer-survey-2024.zip', 'stack-overflow-developer-survey-2022', 'Matplotlib', 
 # #  'AE_Attendances_2010_2024.csv', 'stack-overflow-developer-survey-2020', 'winequality-white.csv', 'monthly-milk-production-pounds.csv']
@@ -40,7 +38,8 @@ plt.legend(["This is Y variable","This is Z variable"])
 plt.savefig('Basic matplotlib plot.png', bbox_inches='tight') ## This saves the output plot
 plt.show()
 
-AE_Attendances_file = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data/AE_Attendances_2010_2024.csv'
+# AE_Attendances_file = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data/AE_Attendances_2010_2024.csv'
+AE_Attendances_file = os.path.join("/home","pablo","Documents","Pablo_zorin","VS_Python_GitHub_Pablo_source","ML-using-Python","data","AE_Attendances_2010_2024.csv")
 
 # 4. Import data first not formattting date
 AE_data = pd.read_csv(AE_Attendances_file)
@@ -119,11 +118,11 @@ plt.show()
 
 
 # 5. Import csv file and format date variables 
-
-AE_Attendances_file = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data/AE_Attendances_2010_2024.csv'
+# AE_Attendances_file = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data/AE_Attendances_2010_2024.csv'
+AE_Attendances_file = os.path.join("/home","pablo","Documents","Pablo_zorin","VS_Python_GitHub_Pablo_source","ML-using-Python","data","AE_Attendances_2010_2024.csv")
 
 # 5.1. Import data first not formattting date
-AE_data_raw = pd.read_csv(AE_Attendances_file)
+AE_data_raw = pd.read_csv(AE_Attendances_file,parse_dates=[0],date_format = '%d/%m/%Y')
 
 AE_data_raw.head()
 AE_data_raw.columns
