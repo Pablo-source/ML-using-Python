@@ -5,12 +5,8 @@
 
 import os
 
-
-
 # >> 1. Download and UNZIP data from UC Irvine Machine Learning to pracise index manipulations <<
 #   https://archive.ics.uci.edu/dataset/186/wine+quality
-
-
 # Check first our working directory
 wd = os.getcwd()
 wd
@@ -18,8 +14,11 @@ wd
 # 2. We will use zipfile function to extract files included in a zip file called "wine_quality.zip"
 # saved in the data folder
 # 
-os.listdir(r'/home/pablo/Documents/Pablo_zorin/VS_Python_projects/data')
+data_folder = os.path.join('/home','pablo','Documents','Pablo_zorin','VS_Python_GitHub_Pablo_source',
+                           'ML-using-Python','data')
+data_folder_contents = os.listdir(data_folder)
 
+print(data_folder_contents)
 
 #- First we import zipfile module
 #- Then we create a zip file object using ZipFile class
@@ -37,7 +36,8 @@ with ZipFile(r'/home/pablo/Documents/Pablo_zorin/VS_Python_projects/data/wine_qu
 )
     
 # Now we can see how two new .csv files about wine quality have been extracted to the /data folder
-os.listdir(r'/home/pablo/Documents/Pablo_zorin/VS_Python_projects/data')
+# os.listdir(r'/home/pablo/Documents/Pablo_zorin/VS_Python_projects/data')
+os.listdir(data_folder)
 
 # We can specifically search for .csv files. We need to use the glob method
 import glob
