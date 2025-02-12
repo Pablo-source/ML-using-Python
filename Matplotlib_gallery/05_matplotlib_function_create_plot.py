@@ -1,5 +1,5 @@
 # Date:11/02/2025
-# Script: 02_matplotlib_function_create_plot.py
+# Script: 05_matplotlib_function_create_plot.py
 # AIM: Create Matplotlib line chart and save it using a function
 
 # Import required libraries
