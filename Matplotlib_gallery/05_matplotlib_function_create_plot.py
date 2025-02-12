@@ -5,6 +5,7 @@
 # Import required libraries
 import pandas as pd
 import os
+from os import path
 
 # 1.Check data folder files content
 wd = os.getcwd()
@@ -47,24 +48,29 @@ plt.savefig('Type I Attendances 2010 2024 period.png', bbox_inches = 'tight')
 plt.show()
 
 # 4. Function to create new "plots" folder
-import os
-from os import path
-
 ## This is an adhoc function to create folders in Python
 def project_setup(file_name):
     """Create new folder"""
     if not path.exists(file_name):
         os.mkdir(file_name)
 
-project_setup(file_name = "plots")
+project_setup(file_name = "Plots")
 
 # 5. Save plot in newly created "plots" folder
-
+# Plot Att_type1
 plt.title("Attendances Type I in England. 2010-2024 Period.")
 plt.plot(AE_data.Date,AE_data.Att_type1)
 plt.xlabel("Time")
 plt.ylabel("Attendances")
-plt.savefig('plots/Type I Attendances 2010 2024 period.png', bbox_inches = 'tight')
+plt.savefig('Plots/Type I Attendances 2010 2024 period.png', bbox_inches = 'tight')
+plt.show()
+
+# Plot Att_type2
+plt.title("Attendances Type II in England. 2010-2024 Period.")
+plt.plot(AE_data.Date,AE_data.Att_type2)
+plt.xlabel("Time")
+plt.ylabel("Attendances")
+plt.savefig('Plots/Type II Attendances 2010 2024 period.png', bbox_inches = 'tight')
 plt.show()
 
 # 6. wip (create new plots using new function to create plots including a single 
