@@ -67,3 +67,32 @@ INEdata_skip_rows.columns
 # Now that we have original columns names imported into Python
 INE_data = INEdata_skip_rows.copy()
 INE_data.head()
+
+# Rename columns
+INE_data.columns = ['Date','Total_population','Foreign_population','Percent_foreign_population',
+'Total population YoY(N)','Total population  YoY(%)','Foreign population YoY(N)','Foreign population  YoY(%)']
+
+
+# 3.Re-create calculated fields 
+# Recreate existing calculated fields "Percent_foreign_population" and "Total population YoY(N)" from
+# #  initial "Total_Population" and "Foreign_population" columns:
+
+# 3.1 - Then we introduce the first new calculated field "Percent_foreign_population" it is just a Foreign_population / Total_population
+INE_calc = INE_data[['Date','Total_population','Foreign_population']]
+INE_calc.head()
+
+INE_calc['Percent_foreign_population'] = INE_calc['Foreign_population']/INE_calc['Total_population']
+INE_calc.head()
+
+# And we express calculation as percentage 
+INE_calc['Percent_foreign_population'] = (INE_calc['Foreign_population']/INE_calc['Total_population']) *100
+INE_calc.head()
+
+# 3.2 Round previous calculated filed "Percent_foreign_population" using a lambda function
+# Using a lambda() function lambda x:round(x,2) with the .apply() method
+INE_calc['Percent_foreign_rounded'] = INE_calc['Percent_foreign_population'].apply(lambda x:round(x,2))
+INE_calc.head()
+
+# Subset just columns including latest calculations from origninal dataframe
+INE_first_calc = INE_calc[['Date','Total_population','Foreign_population','Percent_foreign_rounded']]
+INE_first_calc.head()
