@@ -1,0 +1,7 @@
+This folder will include charts created in Python using Seaborm module
+
+- Seaborn is a Python visualization library based on matplotlib. It provides high-level interface for drawing attractive and informative statistical graphics:
+<https://seaborn.pydata.org/>
+
+- First we need to install seaborn from Terminal in VS code: 
+> pip install seaborn
