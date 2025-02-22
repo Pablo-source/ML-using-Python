@@ -47,4 +47,23 @@ xl.sheet_names  # see all sheet names
 INEdata_input_test = pd.read_excel(ine_population_nationality)
 INEdata_input_test.head()
 
+# 2.2.3 We want to import data from Specifit Excel tab name
+# Importing data into Python from "INE_Total_foreign_population" Excel file tab
+ine_population_nationality = os.path.join('data','INE total and foreign population figures Spain.xlsx')
 
+INEdata_third_tab = pd.read_excel(ine_population_nationality,
+                                  sheet_name='INE_Total_foreign_population')
+INEdata_third_tab.head()
+
+# Then we want to be skip first row of data from third tab, as it contains null values that we want to ommit from our initial Excel data ingestion into Python.
+INEdata_skip_rows = pd.read_excel(ine_population_nationality,
+                                  sheet_name = 'INE_Total_foreign_population',
+                                  skiprows= 2
+                                )
+INEdata_skip_rows.head()
+
+INEdata_skip_rows.columns
+
+# Now that we have original columns names imported into Python
+INE_data = INEdata_skip_rows.copy()
+INE_data.head()
