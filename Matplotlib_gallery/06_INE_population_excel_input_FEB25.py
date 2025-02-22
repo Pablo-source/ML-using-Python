@@ -30,7 +30,7 @@ print('data folder contents:',data_folder_contents)
 ine_population_nationality = os.path.join('data','INE total and foreign population figures Spain.xlsx')
 print('ÍNE_population_nationality:',ine_population_nationality)
 
-# 2.2 Actual step of importing Excel file into python 
+# 2.2 Importing Excel file into python Section
 
 import openpyxl
 
@@ -42,6 +42,9 @@ xl.sheet_names  # see all sheet names
 
 #xl.parse(sheet_name)  # read a specific sheet to DataFrame
 
+# 2.2.2 Import Excel file into python using Pandas read_excel() method
 
+INEdata_input_test = pd.read_excel(ine_population_nationality)
+INEdata_input_test.head()
 
 
