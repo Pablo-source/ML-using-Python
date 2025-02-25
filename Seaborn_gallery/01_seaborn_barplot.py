@@ -102,7 +102,7 @@ plt.figure(figsize=(3, 3))
 plt.rcParams["figure.figsize"] = (25, 15)
 sns.barplot(data = INE_first_plot_sorted,
             x = "Year", 
-            y = "Total_population",log = False).set_title("Spanith total population.2005-2025 period")
+            y = "Total_population",log = False).set_title("Spain total population.2005-2025 period")
 plt.show()
 
 # 7.2 Seaborn barplot formatted plot
@@ -114,7 +114,7 @@ fig = plt.figure(figsize=(30, 15))
 axs = fig.add_subplot(1, 1, 1)
 sns.barplot(data = INE_first_plot_sorted,
             x = "Year", 
-            y = "Total_population").set_title("Spanith total population.2005-2025 period")
+            y = "Total_population").set_title("Spain total population.2005-2025 period")
 formatter = ScalarFormatter()
 formatter.set_scientific(False)
 axs.yaxis.set_major_formatter(formatter)
@@ -135,9 +135,9 @@ fig = plt.figure(figsize=(30, 15))
 axs = fig.add_subplot(1, 1, 1)
 sns.barplot(data = INE_first_plot_sorted,
             x = "Year", 
-            y = "Total_population").set_title("Spanith total population.2005-2025 period")
+            y = "Total_population").set_title("Spain total population.2005-2025 period")
 formatter = ScalarFormatter()
 formatter.set_scientific(False)
 axs.yaxis.set_major_formatter(formatter)
-plt.savefig('Seaborn_gallery/Seaborn_plots/Spanish total population 2005-2025 period.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
+plt.savefig('Seaborn_gallery/Seaborn_plots/Spain total population 2005-2025 period.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
 plt.show()
