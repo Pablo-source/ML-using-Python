@@ -39,3 +39,23 @@ import openpyxl
 my_excel_file = pd.ExcelFile(ine_population_nationality)
 
 my_excel_file.sheet_names  # see all sheet names
+
+# 4.2 Imoprt Excel file into Python using pd.read_excel() method
+INEdata = pd.read_excel(ine_population_nationality,
+                                  sheet_name = 'INE_Total_foreign_population',
+                                  skiprows= 2
+                                )
+INEdata.head()
+
+INEdata.columns # Get column names from Pandas DataFrame imported Excel file
+
+# Rename columns
+INEdata.columns = ['Date','Total_population','Foreign_population','Percent_foreign_population',
+'Total population YoY(N)','Total population  YoY(%)','Foreign population YoY(N)','Foreign population  YoY(%)']
+
+# 5. Data wrangling
+
+# 5.1 Subset columns from initial DataFrame
+
+INE_total_foreign_population = INEdata[['Date','Total_population','Foreign_population']]
+INE_total_foreign_population.head()
