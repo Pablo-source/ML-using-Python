@@ -59,3 +59,18 @@ INEdata.columns = ['Date','Total_population','Foreign_population','Percent_forei
 
 INE_total_foreign_population = INEdata[['Date','Total_population','Foreign_population']]
 INE_total_foreign_population.head()
+
+INE_total_foreign_population.head()
+
+INE_total_foreign_population.info() # Get Pandas DataFrame data type columns info
+
+
+# 5.2 Extract year from character Date column Pandas DataFrame  
+# Using String slicing we will start creating new date variables from initial Srting Date column
+# Using str[] parameter from str.strip() to slice four latest characters from Date column to obtain full year in YYYY format
+# Retrieve character 13 to the end (to inlcude just Year part of the date)
+
+INE_total_foreign_population['Year']  = INE_total_foreign_population['Date'].str.strip().str[13:]
+INE_total_foreign_population.head()
+
+INE_total_foreign_population.head()
