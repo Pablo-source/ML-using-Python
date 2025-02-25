@@ -95,7 +95,7 @@ INE_first_plot.sort_values(by='Year',ascending = True) # Sort dataframe ascendin
 INE_first_plot.head() 
 
 
-# 6.1 First Unformatted Seaborn bar plot
+# 7.2 First Unformatted Seaborn bar plot
 sns.set_theme()
 
 plt.figure(figsize=(3, 3))
@@ -105,7 +105,7 @@ sns.barplot(data = INE_first_plot_sorted,
             y = "Total_population",log = False).set_title("Spain total population.2005-2025 period")
 plt.show()
 
-# 7.2 Seaborn barplot formatted plot
+# 7.3 Seaborn barplot formatted plot
 # Apply format to Y axis numbers to avoid scientific default notation
 from matplotlib.ticker import ScalarFormatter
 
@@ -120,7 +120,7 @@ formatter.set_scientific(False)
 axs.yaxis.set_major_formatter(formatter)
 plt.show()
 
-# 7.2 Save seaborn barplot as png file 
+# 7.4 Save seaborn barplot as png file 
 
 # Save figure as Seaborn barplot, this is an example of a Seaborn bar plot with y axis formatted
 # Also the output plot will be saved as .png file in the Seaborn_plots sub-folder
