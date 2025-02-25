@@ -53,7 +53,7 @@ INEdata.columns # Get column names from Pandas DataFrame imported Excel file
 INEdata.columns = ['Date','Total_population','Foreign_population','Percent_foreign_population',
 'Total population YoY(N)','Total population  YoY(%)','Foreign population YoY(N)','Foreign population  YoY(%)']
 
-# 5. Data wrangling
+# 5. Use String slice to create Year variable from date column
 
 # 5.1 Subset columns from initial DataFrame
 
@@ -66,11 +66,20 @@ INE_total_foreign_population.info() # Get Pandas DataFrame data type columns inf
 
 
 # 5.2 Extract year from character Date column Pandas DataFrame  
+
 # Using String slicing we will start creating new date variables from initial Srting Date column
 # Using str[] parameter from str.strip() to slice four latest characters from Date column to obtain full year in YYYY format
 # Retrieve character 13 to the end (to inlcude just Year part of the date)
-
 INE_total_foreign_population['Year']  = INE_total_foreign_population['Date'].str.strip().str[13:]
 INE_total_foreign_population.head()
 
 INE_total_foreign_population.head()
+
+
+# 6. Subset variables and create Seaborn barplot 
+# Firs I want to subset just three columns from previous Data Frame: two main metrics
+# #  "Total_Population", "Foreign_population" and newly created "Year" column. Also when subsetting those columns
+# #  I want to place Year as the first column on the left.
+
+INE_foreign_pop_plot = INE_total_foreign_population[['Year','Total_population','Foreign_population']]
+INE_foreign_pop_plot.head()
