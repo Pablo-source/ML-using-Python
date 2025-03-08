@@ -26,3 +26,13 @@ os.chdir(new_wd_ML_using_python)
 
 new_wd = os.getcwd()
 print("Changed working directory to:",new_wd)
+
+# 2. Build path to Exel file to be imported from \data sub-folder
+
+# - First we check the contents in our data folder to find Excel file to import into Python
+
+# 3. Build path to Exel file to be imported from \data sub-folder
+data_folder = os.path.join("/home","pablo","Documents","Pablo_zorin","VS_Python_GitHub_Pablo_source","ML-using-Python",
+                           'data')
+data_folder_contents = os.listdir(data_folder)
+print('data folder contents:',data_folder_contents)
