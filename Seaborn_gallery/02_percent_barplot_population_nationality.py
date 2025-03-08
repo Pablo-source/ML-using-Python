@@ -65,3 +65,42 @@ INE_data_clean.columns = ['Date','Total_population','Foreign_population','Percen
 'Total population YoY(N)','Total population  YoY(%)','Foreign population YoY(N)','Foreign population  YoY(%)']
 
 # 4. Create new calculated fields 
+
+# Get first dataframe column names and format data type info
+INE_total_foreign_population.info()
+
+# 4.1 New year column
+
+# I can then modify this str[] parameter from str.strip() to slice four latest characters from Date column to obtain full year in YYYY format. I need to introduce [13:] 
+# #to ensure I obtain a full year on my new Year variable
+INE_total_foreign_population['Year']  = INE_total_foreign_population['Date'].str.strip().str[13:]
+INE_total_foreign_population.head()
+
+#  4.2 New Spanish nationals column derived from total and foreign population figures
+
+# We will compute Spanish nationals column substracting Foreign population 
+# # to Total population obtaining total population split by spanish/foreign nationality
+
+# First we duplicate our original dataframe using .copy() function 
+INE_population_nationality = INE_total_foreign_population.copy()
+INE_population_nationality.head()
+
+# Then we include our new Spanish nationals calculation from substracting Foreign_population to Total_population
+INE_population_nationality['Spanish_nationals'] = INE_population_nationality['Total_population']- INE_population_nationality['Foreign_population']
+INE_population_nationality.head()
+
+# Also rename previous dataframe so new one is called "INE_spain_population" as it is 
+# # just Spanish population split by nationality (Spanish nationals, foreign nationals)
+
+INE_spain_population = INE_population_nationality.copy()
+INE_spain_population.head() 
+
+# Then I only need to subset required columns before I reshape the data 
+INE_spain_population = INE_spain_population[['Year','Total_population','Spanish_nationals','Foreign_population']]
+INE_spain_population
+
+# 5. Reshape data for stacked percent barplot 
+# We need to reshape previous dataframe so we have Spanish national and Foreign population under the same column
+
+Population_to_reshape = INE_spain_population.copy()
+Population_to_reshape.head()
