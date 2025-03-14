@@ -14,6 +14,10 @@ This first folder includes function created specifically to improve daily coding
 - Function to clean and save away your **downloads** folder, automate in a single function the classification and archiving of different file extensions "01 xlsx_files", "02 pdf_files", "03 shp_files", "04 csv_files", "05 ipynb_files", "06 Markdown_files" and "07 xls_files" for now.
     * Script 02: **"01 Clean downloads folder.py"**
 
+## **Seaborn**
+
+Folder including different examples of plots created using **Seaborn** module, line charts, barplots, stacked bar charts, scatterplots.
+
 # ML-using-Python
 Machine Learning models using Python
 
