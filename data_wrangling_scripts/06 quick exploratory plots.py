@@ -41,3 +41,6 @@ AE_data['Type3_ATT'].plot(kind = 'hist', bins = 10)  # Quick histogram Type3_ATT
 # 4.2 Scatterplot
 AE_data.plot(x ='Type1_ATT',
              y ='Type2_ATT',kind = 'scatter')
+
+# 4.3  Line chart
+AE_data.plot(x ='Period',  y ='Type2_ATT',kind = 'line')

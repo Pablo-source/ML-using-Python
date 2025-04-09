@@ -10,13 +10,12 @@ import os
 
 ### 2. Ingest data into Python from \data folder
 wd = os.getcwd()
-print(wd)
-data_folder = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data'
-print(data_folder)
+print('My working directory:',wd)
 
-# List files in my /data folder
+#data_folder = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data'
+data_folder = os.path.join("/home","pablo","Documents","Pablo_zorin","VS_Python_GitHub_Pablo_source","ML-using-Python","data")
 data_folder_contents = os.listdir(data_folder)
-print(data_folder_contents)
+print('data folder contents:',data_folder_contents)
 
 # ['wine_quality.zip', 'winequality.names', 'winequality-red.csv', 'Survey_2024', 'stack-overflow-developer-survey-2024.zip', 'stack-overflow-developer-survey-2022', 'Matplotlib', 
 # #  'AE_Attendances_2010_2024.csv', 'stack-overflow-developer-survey-2020', 'winequality-white.csv', 'monthly-milk-production-pounds.csv']
@@ -37,10 +36,11 @@ plt.title("Line chart, x and z variables")
 plt.xlabel("x")
 plt.ylabel("x and z vars")
 plt.legend(["This is Y variable","This is Z variable"])
-plt.savefig('Basic matplotlib plot.png', bbox_inches='tight') ## This saves the output plot
+plt.savefig('Plots/Basic matplotlib plot.png', bbox_inches='tight') ## This saves the output plot
 plt.show()
 
-AE_Attendances_file = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data/AE_Attendances_2010_2024.csv'
+# AE_Attendances_file = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data/AE_Attendances_2010_2024.csv'
+AE_Attendances_file = os.path.join("/home","pablo","Documents","Pablo_zorin","VS_Python_GitHub_Pablo_source","ML-using-Python","data","AE_Attendances_2010_2024.csv")
 
 # 4. Import data first not formattting date
 AE_data = pd.read_csv(AE_Attendances_file)
@@ -48,7 +48,6 @@ AE_data = pd.read_csv(AE_Attendances_file)
 AE_data.head()
 AE_data.columns
 AE_data.info()
-
 
 # Rename column names using .columns
 # New column names: Date, Att_type1, Att_type2, Att_type3
@@ -102,7 +101,8 @@ plt.xlabel("a")
 plt.ylabel("b and c columns")
 # Include now legend
 plt.legend(["this is b","this is c"])
-plt.savefig('Basic matplotlib line plot.png', bbox_inches='tight') ## This saves the output plot
+# Save output .png file in /Plots project sub-folder
+plt.savefig('Plots/Basic matplotlib line plot.png', bbox_inches='tight') ## This saves the output plot
 plt.show()
 
 # 4.2.2 dot chart with with two series
@@ -114,21 +114,19 @@ plt.xlabel("a")
 plt.ylabel("b and c columns")
 # Include now legend
 plt.legend(["this is b","this is c"])
-plt.savefig('Basic matplotlib dot plot.png', bbox_inches='tight') ## This saves the output plot
+# Save output .png file in /Plots project sub-folder
+plt.savefig('Plots/Basic matplotlib dot plot.png', bbox_inches='tight') ## This saves the output plot
 plt.show()
 
-
 # 5. Import csv file and format date variables 
-
-AE_Attendances_file = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data/AE_Attendances_2010_2024.csv'
+# AE_Attendances_file = r'/home/pablo/Documents/Pablo_zorin/VS_Python_topics/data/AE_Attendances_2010_2024.csv'
+AE_Attendances_file = os.path.join("/home","pablo","Documents","Pablo_zorin","VS_Python_GitHub_Pablo_source","ML-using-Python","data","AE_Attendances_2010_2024.csv")
 
 # 5.1. Import data first not formattting date
-AE_data_raw = pd.read_csv(AE_Attendances_file)
-
+AE_data_raw = pd.read_csv(AE_Attendances_file,parse_dates=[0],date_format = '%d/%m/%Y')
 AE_data_raw.head()
 AE_data_raw.columns
 AE_data_raw.info()
-
 AE_data_raw.head()
 
 # We can see how the plot does not have formatted dates
@@ -137,7 +135,8 @@ plt.plot(AE_data_raw.Period,
 AE_data_raw.Type1_ATT)
 plt.xlabel("Time")
 plt.ylabel("Attendances")
-plt.savefig('Example plot date not formatted.png', bbox_inches='tight') ## This saves the output plot
+# Save output .png file in /Plots project sub-folder
+plt.savefig('Plots/Example plot date not formatted.png', bbox_inches='tight') ## This saves the output plot
 plt.show()
 
 # 5.2 Import csv file formatting date variables
@@ -155,7 +154,8 @@ plt.plot(AE_data.Period,
 AE_data.Type1_ATT)
 plt.xlabel("Time")
 plt.ylabel("Attendances")
-plt.savefig('Type I attendances 2010-2013 period.png', bbox_inches='tight') ## This saves the output
+# Save output .png file in /Plots project sub-folder
+plt.savefig('Plots/Type I attendances 2010-2013 period.png', bbox_inches='tight') ## This saves the output
 plt.show()
 
 # Type1 and Type2 line chart Attendances in England. 2010 2014 period.
@@ -164,7 +164,8 @@ plt.plot(AE_data.Period,AE_data.Type1_ATT)
 plt.plot(AE_data.Period,AE_data.Type2_ATT)
 plt.xlabel("Time")
 plt.ylabel("Attendances")
-plt.savefig('Type I and II attendances 2010 2024 period.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
+# Save output .png file in /Plots project sub-folder
+plt.savefig('Plots/Type I and II attendances 2010 2024 period.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
 plt.show()
 
 # Type1, Type2 and Type3 Attendances  line chart Attendances in England. 2010 2014 period.
@@ -174,7 +175,8 @@ plt.plot(AE_data.Period,AE_data.Type2_ATT)
 plt.plot(AE_data.Period,AE_data.Type3_ATT)
 plt.xlabel("Time")
 plt.ylabel("Attendances")
-plt.savefig('Type I, II and IIII attendances 2010 2024 period.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
+# Save output .png file in /Plots project sub-folder
+plt.savefig('Plots/Type I, II and IIII attendances 2010 2024 period.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
 plt.show()
 
 ### 6. Include legends in matplotlib plots
@@ -188,5 +190,5 @@ plt.plot(AE_data.Period,AE_data.Type3_ATT, label = "Type III Attendences")
 plt.xlabel("Time")
 plt.ylabel("Attendances")
 plt.legend(loc="lower left")
-plt.savefig('Type I, II and IIII attendances 2010 2024 period.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
+plt.savefig('plots/Type I, II and III attendances 2010 2024 period.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
 plt.show()
