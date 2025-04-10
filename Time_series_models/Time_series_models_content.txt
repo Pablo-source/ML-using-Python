@@ -1,0 +1,4 @@
+## This is a new folder to include different Time series models in Python
+# I will start using Univariate Time series models and then I will include multivariate models with covariates.
+
+# The first models created will be using sktime module
