@@ -18,14 +18,21 @@ wd = os.getcwd()
 print('My working directory is:',wd)
 
 # My working directory is: c:\Repos\ML-using-Python\data_wrangling_scripts
-#  C:\Repos\ML-using-Python
+#  c:\Repos\ML-using-Python\Time_series_models
  
-AE_Attendances_file = r'C:\Repos\ML-using-Python\data\AE_Attendances_2010_2024.csv'
-
-project_directory_main = r'C:\Repos\ML-using-Python'
+project_directory_main = os.path.join('c:/','Repos','ML-using-Python')
 my_direcory = os.chdir(project_directory_main)
 wd = os.getcwd()
 print(wd)
 
-os.chdir('C:/Pablo UK/46 DATA SCIENCE all/10 ML python JULY 2021')
+# Chedk files in our \data sub-folder
+data_folder = os.path.join('c:/','Repos','ML-using-Python','data')
+data_folder_contents = os.listdir(data_folder)
+print('data folder contents:',data_folder_contents)
+
+
+# 2. Build path to this "AE_Attendances_2010_2024.csv" file we want to import into Python
+
+
+
 # Read in dataset
