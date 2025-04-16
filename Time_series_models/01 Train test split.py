@@ -22,7 +22,7 @@ print('My working directory is:',wd)
  
 AE_Attendances_file = r'C:\Repos\ML-using-Python\data\AE_Attendances_2010_2024.csv'
 
-project_directory_main = r'C:\Repos\ML-using-Python\data_wrangling_script'
+project_directory_main = r'C:\Repos\ML-using-Python'
 my_direcory = os.chdir(project_directory_main)
 wd = os.getcwd()
 print(wd)
