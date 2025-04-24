@@ -32,7 +32,9 @@ print('data folder contents:',data_folder_contents)
 
 
 # 2. Build path to this "AE_Attendances_2010_2024.csv" file we want to import into Python
+# 2.2 Build  path to Excel file location
+AE_data_file = os.path.join('data','AE_Attendances_2010_2024.csv')
+print('ÍNE_population_nationality:',AE_data_file)
 
 
-
-# Read in dataset
+#  3.Read in dataset into Python
