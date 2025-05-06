@@ -21,3 +21,9 @@ project_directory = os.path.join('/home','pablo','Documents','Pablo_zorin','VS_P
 my_directory = os.chdir(project_directory)
 wd = os.getcwd()
 print('My new WD is:',wd)
+
+# 1.2 Check files in \data sub-folder
+data_folder = os.path.join('/home','pablo','Documents','Pablo_zorin','VS_Python_GitHub_Pablo_source','ML-using-Python','data')
+data_folder_contents = os.listdir(data_folder)
+print('data folder contents are:',data_folder_contents)
+
