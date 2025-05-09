@@ -64,3 +64,29 @@ import matplotlib.pyplot as plt
 sns.set_theme(style="darkgrid")
 
 # 3.1 Plot TypeIATT
+
+# Dataset AE_data_TypeIATT
+AE_data_TypeIATT.info()
+
+# Get Min and Max dates for AE_data_TypeI DataFrame
+
+# Min date 
+Min_date_AE_data_TypeIATT = AE_data_TypeIATT['Period'].min()
+print('Min period AE_data_TypeIATT dataframe is:',Min_date_AE_data_TypeIATT)
+
+# Max date
+Max_date_AE_data_TypeIATT = AE_data_TypeIATT['Period'].max()
+print('Max period AE_data_TypeIATT dataframe is:',Max_date_AE_data_TypeIATT)
+
+
+AE_TypeIATT_timeseries = AE_data_TypeIATT.loc[(AE_data_TypeIATT['Period'] >= '2010-01-08')
+                                             & (AE_data_TypeIATT['Period'] <= '2025-01-03')]
+
+AE_TypeIATT_timeseries.head()
+AE_TypeIATT_timeseries.info()
+
+## Note: Check why full period plot does not work but when subsetting data for one year does.
+
+# Check this plot it should get same results as the "Import_csv_into_Python_for_seaborn_plots.ipynb" file.
+sns.set(rc={'figure.figsize':(10,5)})
+ax = sns.lineplot(x='Period',y='Type1_ATT',data = AE_TypeIATT_timeseries, marker = '*', color = '#965786').set_title("UK TypeI Attendances Time series.2010-2025 period")
