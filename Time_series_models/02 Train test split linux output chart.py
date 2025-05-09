@@ -46,6 +46,21 @@ AE_data.head()
 # 2. Split initial Set into TypeI, TypeII, TypeII with Period column datasets
 # To apply later the adhoc trainsplit() function created in previous script:
 
-AE_data_TypeIATT = [['Period','Type1_ATT']]
-AE_data_TypeIIATT = [['Period','Type2_ATT']]
-AE_data_TypeIIIATT = [['Period','Type3_ATT']]
+AE_data_TypeIATT = AE_data[['Period','Type1_ATT']]
+AE_data_TypeIIATT = AE_data[['Period','Type2_ATT']]
+AE_data_TypeIIIATT = AE_data[['Period','Type3_ATT']]
+
+print(AE_data_TypeIATT)
+
+AE_data_TypeIATT.head()
+AE_data_TypeIIATT.head()
+AE_data_TypeIIIATT.head()
+
+# 3.Exploratory plts
+
+# 3.1 Load required seaborn and matplotlib libraries
+import seaborn as sns
+import matplotlib.pyplot as plt 
+sns.set_theme(style="darkgrid")
+
+# 3.1 Plot TypeIATT
