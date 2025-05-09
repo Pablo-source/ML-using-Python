@@ -27,9 +27,25 @@ data_folder = os.path.join('/home','pablo','Documents','Pablo_zorin','VS_Python_
 data_folder_contents = os.listdir(data_folder)
 print('data folder contents are:',data_folder_contents)
 
-# 1.3 Check .csv files as I want to import just .csv files
+# 1.3 Check .csv files available in the /data sub-folder
+# I want to import .csv file "data/AE_Attendances_Aug2010_Mar_2025.csv"
 for files in os.listdir(data_folder):
     if files.endswith('.csv'):
         print(files)
     else:
         continue
+
+# 1.4 Import .csv file "AE_Attendances_Aug2010_Mar_2025.csv"
+Attendances_file = os.path.join('data','AE_Attendances_Aug2010_Mar_2025.csv')
+
+AE_data = pd.read_csv(Attendances_file,
+                      parse_dates=['Period'])
+
+AE_data.info()
+AE_data.head()
+# 2. Split initial Set into TypeI, TypeII, TypeII with Period column datasets
+# To apply later the adhoc trainsplit() function created in previous script:
+
+AE_data_TypeIATT = [['Period','Type1_ATT']]
+AE_data_TypeIIATT = [['Period','Type2_ATT']]
+AE_data_TypeIIIATT = [['Period','Type3_ATT']]
