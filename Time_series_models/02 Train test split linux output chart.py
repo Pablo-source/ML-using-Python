@@ -27,3 +27,9 @@ data_folder = os.path.join('/home','pablo','Documents','Pablo_zorin','VS_Python_
 data_folder_contents = os.listdir(data_folder)
 print('data folder contents are:',data_folder_contents)
 
+# 1.3 Check .csv files as I want to import just .csv files
+for files in os.listdir(data_folder):
+    if files.endswith('.csv'):
+        print(files)
+    else:
+        continue
