@@ -91,6 +91,8 @@ AE_TypeIATT_2011 = AE_data_TypeIATT.loc[(AE_data_TypeIATT['Period'] >= '2011-01-
 AE_TypeIATT_2012 = AE_data_TypeIATT.loc[(AE_data_TypeIATT['Period'] >= '2012-01-01')
                                              & (AE_data_TypeIATT['Period'] <= '2012-01-12')]
 
+view(AE_TypeIATT_2011)
+view(AE_TypeIATT_2012)
 # Plot 2011 TypeIAtt data 
 
 sns.set(rc={'figure.figsize':(10,5)})
