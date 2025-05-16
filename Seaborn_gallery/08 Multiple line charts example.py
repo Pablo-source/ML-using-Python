@@ -24,3 +24,7 @@ data_wide = pd.DataFrame(
 
 data_wide.info()
 data_wide.head()
+
+# Convert dataframe from wide to long
+df_long = pd.melt(data_wide,['Year'])
+df_long.head()
