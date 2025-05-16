@@ -90,11 +90,19 @@ AE_TypeIATT_2011 = AE_data_TypeIATT.loc[(AE_data_TypeIATT['Period'] >= '2011-01-
 # 2012
 AE_TypeIATT_2012 = AE_data_TypeIATT.loc[(AE_data_TypeIATT['Period'] >= '2012-01-01')
                                              & (AE_data_TypeIATT['Period'] <= '2012-01-12')]
+# 2013
+AE_TypeIATT_2013 = AE_data_TypeIATT.loc[(AE_data_TypeIATT['Period'] >= '2013-01-01')
+                                        & (AE_data_TypeIATT['Period'] <= '2013-01-12')]
+# 2014
+AE_TypeIATT_2014 = AE_data_TypeIATT.loc[(AE_data_TypeIATT['Period'] >= '2014-01-01')
+                                        & (AE_data_TypeIATT['Period'] <= '2014-01-12')]
 
-view(AE_TypeIATT_2011)
-view(AE_TypeIATT_2012)
-# Plot 2011 TypeIAtt data 
+print(AE_TypeIATT_2011)
+print(AE_TypeIATT_2012)
+print(AE_TypeIATT_2013)
+print(AE_TypeIATT_2014)
 
+# Plot Each year TypeIAtt data 
 sns.set(rc={'figure.figsize':(10,5)})
 ax = sns.lineplot(x='Period',y='Type1_ATT',data = AE_TypeIATT_2011, marker = '*', 
                   color = '#965786').set_title("UK TypeI Attendances Time series.2011 period")
