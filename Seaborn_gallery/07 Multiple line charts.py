@@ -124,9 +124,33 @@ AE_data_TypeIATT.head()
 AE_data_TypeIATT.tail()
 AE_data_TypeIATT.info()
 
-# 4. Extract Year from Period 
+# 5. Extract Year from Period 
 
 # Example 2: Using pandas.Series.dt.year()
 # Use the .dt.year accessor to extract the year from a DateTime column in Pandas.
 AE_data_TypeIATT['Year'] = AE_data_TypeIATT['Period'].dt.year
 AE_data_TypeIATT.head()
+AE_data_TypeIATT.info()
+
+# Change Year as string
+# a = str(5)
+AE_data_TypeIATT['Year_string'] = str(AE_data_TypeIATT['Year'])
+AE_data_TypeIATT.info()
+
+# 6. Create a Seaborn single plot with four lines, one per year (2011,2012,2013,2014)
+# Now I need to use Year_string column for this plot
+
+# Sebaorn multiple line charts example
+# sns.lineplot(data = df_long , x ='Year', y = 'value', hue = 'variable').set_title("Seaborn Multiple line chart example")
+# plt.savefig('Seaborn_gallery/Seaborn_plots/Multiple line chart example.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
+# plt.show()
+
+# Applied to AE_data_TypeIATT data
+AE_data_TypeIATT.head()
+
+sns.lineplot(data=AE_data_TypeIATT, x='Period', y='Type1_ATT',hue = 'Year')
+sns.lineplot(data = df_long , x ='Year', y = 'value', hue = 'variable').
+
+# save plot: 
+# plt.savefig('Seaborn_gallery/Seaborn_plots/UK TypeIII Attendances UK year 2011.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
+# plt.show()
