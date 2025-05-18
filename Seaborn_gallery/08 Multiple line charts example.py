@@ -27,10 +27,13 @@ data_wide.head()
 
 # Convert dataframe from wide to long
 df_long = pd.melt(data_wide,['Year'])
-df_long.head()
 df_long.info()
+df_long.head()
+
+my_wd = os.getcwd()
+print(my_wd)
 
 # Then plot multiple lines into a single chart
 sns.lineplot(data = df_long , x ='Year', y = 'value', hue = 'variable').set_title("Seaborn Multiple line chart example")
-plt.savefig('Seaborn_gallery/Seaborn_plots/Multiple line chart example.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
+plt.savefig('/home/pablo/Documents/Pablo_zorin/VS_Python_GitHub_Pablo_source/ML-using-Python/Seaborn_gallery/Seaborn_plots/Multiple line chart example.png', bbox_inches='tight') ## This saves the output plot successfully in the project folder
 plt.show()
