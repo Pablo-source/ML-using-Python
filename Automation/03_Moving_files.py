@@ -33,3 +33,8 @@ def testing_folders_setup():
     print("Created new testing folders")
 
 testing_folders_setup()
+
+
+## 1. Moving files using Shutil
+
+# 1.1 Moving files from "Test_files_A" folder to "Test_files_B" folder
