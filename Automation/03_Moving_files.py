@@ -45,12 +45,11 @@ wd = os.getcwd()
 print(f"My Current Working Directory is{wd}")
 
 # 1.2 Check files to move are present in /Test_files_A sub-folder
-
 files_directories = os.listdir(wd)
 print(f"Files and directories in wd:{files_directories}")
 
 csv_files = glob.glob(r'Test_files_A/*.csv')
-print(csv_files)
+print(f"Existing csv files in Test_files_A sub_folder:{csv_files}")
 print(len(csv_files))
 
 #    for item in range(len(csv_files)):
