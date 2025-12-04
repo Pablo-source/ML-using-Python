@@ -38,3 +38,16 @@ testing_folders_setup()
 ## 1. Moving files using Shutil
 
 # 1.1 Moving files from "Test_files_A" folder to "Test_files_B" folder
+    # 04/06 CSV Files
+    csv_files = glob.glob(r'ML-using-Python/Test_files_A/*.csv')
+    print(csv_files)
+    print(len(csv_files))
+
+#    for item in range(len(csv_files)):
+#        print(csv_files[item])
+    # Now we move each .csv file to the previously created 04 csv_files folder
+#        original = csv_files[item]
+#       target = r'ML-using-Python/Test_files_B'
+#       shutil.move(original, target)
+#       print(f"file{item},has been moved to 04 csv_files folder")
+
