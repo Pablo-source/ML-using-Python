@@ -37,18 +37,19 @@ testing_folders_setup()
 
 ## 1. Moving files using Shutil
 
-# 1.1 Moving files from "Test_files_A" folder to "Test_files_B" folder
-    # 04/06 CSV Files
+# 1.1 Check current WD
 ML_using_python_project = '/home/pablo/Documents/Pablo_ubuntu/Python_github_projects'
 Curr_dir = os.chdir(ML_using_python_project)
 wd = os.getcwd()
 
 print(f"My Current Working Directory is{wd}")
 
+# 1.2 Check files to move are present in /Test_files_A sub-folder
+
 files_directories = os.listdir(wd)
 print(f"Files and directories in wd:{files_directories}")
 
-csv_files = glob.glob(r'ML-using-Python/Test_files_A/*.csv')
+csv_files = glob.glob(r'Test_files_A/*.csv')
 print(csv_files)
 print(len(csv_files))
 
