@@ -32,7 +32,7 @@ create_new_folders()
 # I want to import .csv file "data/AE_Attendances_Aug2010_Mar_2025.csv"
 
 # data_folder = os.path.join('/home','pablo','Documents','Pablo_zorin','VS_Python_GitHub_Pablo_source','ML-using-Python','data')
-Test_folder_A = os.path.join('c:','Users','pituf','OneDrive','Documentos','Pablo','DELL_python_github','ML-using-Python','Test_folder_A')
+Test_folder_A = os.path.join('C:','Users','pituf','OneDrive','Documentos','Pablo','DELL_python_github','ML-using-Python','Test_folder_A')
 Test_folder_A_contents = os.listdir(Test_folder_A)
 
 # for files in os.listdir(data_folder):
