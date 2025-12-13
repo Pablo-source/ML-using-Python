@@ -34,6 +34,7 @@ create_new_folders()
 
 test_folder_A = r'C:\Users\pituf\OneDrive\Documentos\Pablo\DELL_python_github\ML-using-Python\Test_folder_A'
 my_directory = os.chdir(test_folder_A)
+
 wd = os.getcwd() 
 print(wd)
 
@@ -44,3 +45,11 @@ for files in os.listdir(test_folder_A):
         continue
 
 # 2. List files on "Test_folder_B" destination folder:
+test_folder_B = r'C:\Users\pituf\OneDrive\Documentos\Pablo\DELL_python_github\ML-using-Python\Test_folder_B'
+
+for files in os.listdir(test_folder_B): 
+    if files.endswith('.csv'):
+         print(files)
+    else:
+        continue
+
