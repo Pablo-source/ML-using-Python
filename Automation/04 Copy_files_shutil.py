@@ -33,16 +33,7 @@ create_new_folders()
 
 # data_folder = os.path.join('/home','pablo','Documents','Pablo_zorin','VS_Python_GitHub_Pablo_source','ML-using-Python','data')
 
-Path
-----
-C:\Users\pituf\OneDrive\Documentos\Pablo\DELL_python_github\ML-using-Python
-
-
-PS C:\Users\pituf\OneDrive\Documentos\Pablo\DELL_python_github\ML-using-Python>
-
-
-
-Test_folder_A = os.path.join('C:','Users','pituf','OneDrive','Documentos','Pablo','DELL_python_github','ML-using-Python')
+Test_folder_A = os.path.join('C:','Users','pituf','OneDrive','Documentos','Pablo','DELL_python_github','ML-using-Python','Test_folder_A')
 Test_folder_A_contents = os.listdir(Test_folder_A)
 
 # for files in os.listdir(data_folder):
