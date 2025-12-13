@@ -53,3 +53,17 @@ for files in os.listdir(test_folder_B):
     else:
         continue
 
+# 3. Copy files from "Test_folder_A" to "Test_folder_B" destination folder:
+
+csv_files = glob.glob(r'Test_folder_A/*.csv')
+print(f"Existing csv files in Test_files_A sub_folder:{csv_files}")
+print(len(csv_files))
+
+# 1.2 Move files from Test_files_A folder to Test_files_B folder using Shutil module
+# for item in range(len(csv_files)):
+#     print(csv_files[item])
+ # Now we move each .csv file to the previously created 04 csv_files folder
+ #   original = csv_files[item]
+ #   target = r'Test_files_B'
+ #   shutil.move(original, target)
+ #   print(f"file{item},has been moved to Test_files_B folder")
