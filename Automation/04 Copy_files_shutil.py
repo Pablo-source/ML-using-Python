@@ -26,3 +26,20 @@ def create_new_folders():
     print("Created Test A and Test B origin destination folders!")
 # Execute function
 create_new_folders()
+
+# 1. List files on "Test_folder_A" to be moved to "Test_folder_B"
+# Check .csv files available in the /data sub-folder
+# I want to import .csv file "data/AE_Attendances_Aug2010_Mar_2025.csv"
+
+# data_folder = os.path.join('/home','pablo','Documents','Pablo_zorin','VS_Python_GitHub_Pablo_source','ML-using-Python','data')
+# data_folder_contents = os.listdir(data_folder)
+
+# Test_folder_A = c:/Users/pituf/OneDrive/Documentos/Pablo/DELL_python_github/ML-using-Python/Automation/04 Copy_files_shutil.py
+
+
+
+# for files in os.listdir(data_folder):
+#    if files.endswith('.csv'):
+#         print(files)
+#    else:
+#        continue
