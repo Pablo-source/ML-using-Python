@@ -32,11 +32,8 @@ create_new_folders()
 # I want to import .csv file "data/AE_Attendances_Aug2010_Mar_2025.csv"
 
 # data_folder = os.path.join('/home','pablo','Documents','Pablo_zorin','VS_Python_GitHub_Pablo_source','ML-using-Python','data')
-# data_folder_contents = os.listdir(data_folder)
-
-# Test_folder_A = c:/Users/pituf/OneDrive/Documentos/Pablo/DELL_python_github/ML-using-Python/Automation/04 Copy_files_shutil.py
-
-
+Test_folder_A = os.path.join('c:','Users','pituf','OneDrive','Documentos','Pablo','DELL_python_github','ML-using-Python','Test_folder_A')
+Test_folder_A_contents = os.listdir(Test_folder_A)
 
 # for files in os.listdir(data_folder):
 #    if files.endswith('.csv'):
