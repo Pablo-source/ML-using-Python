@@ -2,8 +2,8 @@
 title: "Setup venv in Python"
 title-block-banner: true
 title-block-banner-color: azure
-author:"Pablo Leon"
-date: "`Sys.Date()`"
+author: "Pablo Leon"
+date: today
 format: html
 ---
 
