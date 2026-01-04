@@ -12,7 +12,7 @@ format:
     code-block-border-left: "#31BAE9"
 ---
 
-## Creating multiples subplots
+## Creating multiples subplots 
 
 This notebook will focus on how to use the subplots() **method** from matplotlib **module**. Reference:<https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html>
 
