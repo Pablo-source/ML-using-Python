@@ -7,7 +7,7 @@ date: "`Sys.Date()`"
 format: html
 ---
 
-# Creating new environments in Python using venv 
+# Creating new environments in Python using venv  
 
 - This document describes how to create a Python environment using {venv} module. This environment is requierd to install required modules for any specific Python project
 
