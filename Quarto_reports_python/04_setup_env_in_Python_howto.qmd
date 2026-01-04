@@ -1,5 +1,21 @@
 ---
 title: "Setup venv in Python"
+title-block-banner: true
+title-block-banner-color: azure
+author:"Pablo Leon"
+date: "`Sys.Date()`"
 format: html
 ---
+
+# Creating new environments in Python using venv
+
+- This document describes how to create a Python environment using {venv} module. This environment is requierd to install required modules for any specific Python project
+
+- For example, let's say I want to start a new project to design a Streamlit app in this location on my local machine: 
+
+> /home/pablo/Documents/Pablo_ubuntu/Python_projects/05_Streamlit_app
+
+- On my home machine, I have created a new folder called "05_Streamlit_app" where I want to design a new Steramlit app. 
+- For reference, this is the main website for **Streamlit** apps module: <https://streamlit.io/>
+
 
