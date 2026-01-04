@@ -18,13 +18,44 @@ format: html
 - On my home machine, I have created a new folder called "05_Streamlit_app" where I want to design a new Steramlit app. 
 - For reference, this is the main website for **Streamlit** apps module: <https://streamlit.io/>
 
-# Advantages of using venv
+## Advantages of using venv
 
 - Isolates modules for each project
 - Solves dependency issues as all modules relate to the same environment
 - Makes easy to restore environments on a new computer
 
-# Steps to create new environments
+## Steps to create new environments
 
 - Follow the steps below to create a new environment in Python inside a projet folder
 - Run all the steps below in the **terminal**
+
+## 1. Create new environment and assign it a new name
+
+- This first step specifies we want to use **python3** in a new environment. Also we provide a name for it
+- For example, create a new environment called *streamlit_app* avoiding spaces in the environment name
+- Run **all** the commands below in the **terminal** to create and activate it.
+- For example, in Linux we create a new environment in **Python** called **streamlit_app** tipying in the terminal the following commands: 
+
+> python3 -m venv streamlit_app
+
+## 2.Activate environment
+
+- Once the environment has been created, we need to **activate** it to start installing requried **modules**, type in the terminal the following commands.
+- This is the way to **activate** a new virtual environment called **streamlit_app**:
+
+> source streamlit_app/bin/activate
+
+## 3. Check path to python interpreter
+
+- It is important to check which python interpreter we have been using in this new environment.
+
+> with python
+
+## 4. Install modules in this new active environment
+
+- This is the way we install different Python modules (pandas, numpy, os) into our new environment
+
+> python3 -m pip install pandas
+> python3 -m pip install seaborn
+> python3 -m pip install os
+> python3 -m pip install shutil
