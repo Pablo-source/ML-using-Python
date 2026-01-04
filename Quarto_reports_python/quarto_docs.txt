@@ -3,3 +3,7 @@
 - List of Quarto files: 
 01_matplotlib_line_charts.qmd
 02_matplotlib_bar_charts.qmd
+03_matplotlib_subplots.qmd
+04_setup_env_in_Python_howto.qmd
+
+
