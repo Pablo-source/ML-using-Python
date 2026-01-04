@@ -59,3 +59,13 @@ format: html
 > python3 -m pip install seaborn
 > python3 -m pip install os
 > python3 -m pip install shutil
+
+## 5. Lilst current packages installed in newly created environment
+
+- Once we have created the new environment, and activated it. 
+- And also after we have installed required modules (pandas, numpy, os, seaborn) to work on this new env,
+- We can always check how many modules we have finally installed with the command below: 
+
+> python3 -m pip list 
+
+This list will expand as we install new modules in Python for our specific environment on this project folder.
