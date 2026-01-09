@@ -1,0 +1,5 @@
+# This project folder will include examples of Streamlit apps designed in Python
+
+# First instaled streamlit module in this "ML-using-python" virstual environment
+# using pip > python3 -m pip install streamlit
+# Streamlit module website: https://pypi.org/project/streamlit/
