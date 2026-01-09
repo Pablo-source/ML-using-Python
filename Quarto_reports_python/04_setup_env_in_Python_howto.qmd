@@ -2,8 +2,8 @@
 title: "Setup venv in Python"
 title-block-banner: true
 title-block-banner-color: azure
-author:"Pablo Leon"
-date: "`Sys.Date()`"
+author: "Pablo Leon"
+date: today
 format: html
 ---
 
@@ -56,8 +56,11 @@ format: html
 - This is the way we install different Python modules (pandas, numpy, os) into our new environment
 
 > python3 -m pip install pandas
+
 > python3 -m pip install seaborn
+
 > python3 -m pip install os
+
 > python3 -m pip install shutil
 
 ## 5. Lilst current packages installed in newly created environment
