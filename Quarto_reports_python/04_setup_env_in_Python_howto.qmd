@@ -56,8 +56,11 @@ format: html
 - This is the way we install different Python modules (pandas, numpy, os) into our new environment
 
 > python3 -m pip install pandas
+
 > python3 -m pip install seaborn
+
 > python3 -m pip install os
+
 > python3 -m pip install shutil
 
 ## 5. Lilst current packages installed in newly created environment
