@@ -1,0 +1,3 @@
+# This is a new folder to include maps created in Python
+# AIM using different python modules to create choropleth maps and 
+# related scripts used in maps data wrangling to prep raw data for maps and also interactive visualizations using maps
