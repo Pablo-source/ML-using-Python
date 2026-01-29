@@ -1,3 +1,4 @@
+# Script: 01_optimise_ifelse_using_dictionaries.py
 # Aim: Using get() method with dictionaries
 #      It allows you to define a default method
 
@@ -12,7 +13,7 @@ food_items_dict = { "burger": 9.00,
 # You can also specify a default value to return if the key is not found.
 
 def getPrice(food_item):
-    return food_items_dict.get(food_item, "item not found")
+    return food_items_dict.get(food_item, "item not found") # When item not found in the food_idems_dict script returns "item not found"
 
 print(getPrice(food_item))
 
