@@ -1,0 +1,3 @@
+# This folder will contain different Python scripts as initial stage of development
+# Any new idea or test will start its inception in this folder
+# As it evolves into a script that can be integrated into a piece of code will be mnoved to other folders
